@@ -4,19 +4,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Evan's Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script>
+       /**
+        * @param num1
+        * @param num2
+        * @return total
+        * this method takes in two numbers and returns the sum of both
+        * */
          const Add = (num1, num2)=>{
+          return total =num1+num2;
             
-          total =num1+num2;
-            return total;
          }
-       //  console.log(Add(6,2));
+        /** 
+         * @param num1
+        * @param num2
+        * @return total
+        * this method takes in two numbers and returns the difference of both
+          **/
+const subtract = (num1, num2)=>{
+        return total =num1-num2;
+}
+ /** 
+         * @param num1
+        * @param num2
+        * @return total
+        * this method takes in two numbers and returns the product of both
+          **/
+
+const multiply = (num1, num2)=>{
+    return total = num1*num2;
+}
+ /** 
+         * @param num1
+        * @param num2
+        * @return total
+        * this method takes in two numbers and returns the divison of both
+          **/
+const divide = (num1, num2)=>{
+    return total = num1/num2;
+}
+
+const operate = function(operator, num1, num2) {
+    switch(operator){
+        case '+': 
+        Add(num1, num2); 
+        break;
+
+        case'-': 
+        subtract(num1, num2);
+        break;
+        
+        case'*': 
+       multiply(num1, num2);
+        break;
+
+        case'/': 
+        divide(num1, num2);
+        break;
+        
+        default:
+            console.log('invalid operator used');
+    }
+
+}
+
     </script>
 </head>
 <body>
+    <h1><strong>Calculator</strong></h1>
     
+  <div class ='container'>
+    <button id ="LsB-btn" class ="operation-btn">(</button>
+<button id ="RsB-btn" class ="operation-btn">)</button>
+<button id ="Clear-Btn" class ="operation-btn">🗑️ </button>
+<button id ="bck-space-btn" class ="operation-btn">⌫</button>
+
+<button id ="btn-7" class ="number-btn">7</button>
+<button id ="btn-8" class ="number-btn">8</button>
+<button id ="btn-9" class ="number-btn">9</button>
+<button id ="div-btn" class ="operation-btn">÷</button>
+
+<button id ="btn-4" class ="number-btn">4</button>
+<button id ="btn-5" class ="number-btn">5</button>
+<button id ="btn-6" class ="number-btn">6</button>
+<button id ="multi-btn" class ="operation-btn">x</button>
+
+<button id ="btn-1" class ="number-btn">1</button>
+<button id ="btn-2" class ="number-btn">2</button>
+<button id ="btn-3" class ="number-btn">3</button>
+<button id ="sub-btn" class ="operation-btn">-</button>
+
+<button id ="deci-btn" class ="operation-btn">.</button>
+<button id ="btn-0" class ="number-btn">0</button>
+<button id ="equal-btn" class ="operation-btn">=</button>
+<button id ="plus-btn" class ="operation-btn">+</button>
+
+ 
+  </div>
+
+    </div>
     
 </body>
 <script src ="functions.js"></script>
