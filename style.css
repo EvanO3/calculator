@@ -17,7 +17,7 @@
 .screen{
   grid-column: span 4;
   border-style: solid;
-  border-color: black;
+  border-color: white;
   padding:30px;
   margin:20px;
 }
@@ -28,15 +28,20 @@
   justify-content:center;
   align-items:center;
  
-  height: 100vh;
+  height: 80vh;
+  
+ 
 }
 .calculator{
     display:grid;
     grid-template-columns:repeat(4, 66px);
     border-radius: 28px;
-    padding:16px;
+    padding:25px;
     border-style: solid;
     border-color:black;
+    background-color: black;
+    
+    
   
 
 }
