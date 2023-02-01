@@ -18,6 +18,7 @@
   grid-column: span 4;
   border-style: solid;
   border-color: white;
+  background-color:white;
   padding:30px;
   margin:20px;
 }
