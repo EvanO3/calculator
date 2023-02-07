@@ -7,68 +7,7 @@
     <title>Evan's Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script>
-       /**
-        * @param num1
-        * @param num2
-        * @return total
-        * this method takes in two numbers and returns the sum of both
-        * */
-         const Add = (num1, num2)=>{
-          return total =num1+num2;
-            
-         }
-        /** 
-         * @param num1
-        * @param num2
-        * @return total
-        * this method takes in two numbers and returns the difference of both
-          **/
-const subtract = (num1, num2)=>{
-        return total =num1-num2;
-}
- /** 
-         * @param num1
-        * @param num2
-        * @return total
-        * this method takes in two numbers and returns the product of both
-          **/
-
-const multiply = (num1, num2)=>{
-    return total = num1*num2;
-}
- /** 
-         * @param num1
-        * @param num2
-        * @return total
-        * this method takes in two numbers and returns the divison of both
-          **/
-const divide = (num1, num2)=>{
-    return total = num1/num2;
-}
-
-const operate = function(operator, num1, num2) {
-    switch(operator){
-        case '+': 
-        Add(num1, num2); 
-        break;
-
-        case'-': 
-        subtract(num1, num2);
-        break;
-        
-        case'*': 
-       multiply(num1, num2);
-        break;
-
-        case'/': 
-        divide(num1, num2);
-        break;
-        
-        default:
-            console.log('invalid operator used');
-    }
-
-}
+    
 
     </script>
 </head>
@@ -80,8 +19,9 @@ const operate = function(operator, num1, num2) {
 <div class="container">
  
   <div class="calculator">
-    <div class="screen" value ='screen'>
-      
+    <div id="screen" >
+      <div class="previous"></div>
+      <div class="current"></div>
     </div>
  <button class="btn-clear">AC</button>
  <button class="btn-op" value='-'>+/-</button>
@@ -90,7 +30,7 @@ const operate = function(operator, num1, num2) {
  <button class="btn-num" value ='7'>7</button>
  <button class="btn-num" value ='8'>8</button>
  <button class="btn-num" value='9'>9</button>
- <button class="btn-op">x</button>
+ <button class="btn-op" value ='x'>x</button>
  <button class="btn-num" value='4'>4</button>
  <button class="btn-num"value='5'>5</button>
  <button class="btn-num" value ='6'>6</button>
