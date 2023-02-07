@@ -3,25 +3,111 @@
     let clear = document.querySelector('.btn-clear');
     let numbers = document.querySelectorAll('.btn-num');
     let operators = document.querySelectorAll('.btn-op');
-    let equals = document.querySelectorAll('.btn-eq');
-let display = document.querySelector('.screen')
+    let equal = document.querySelector('.btn-eq');
+    let display = document.querySelector('.screen')
+    let previousScreen = document.querySelector('.previous')
+    let currentScreen = document.querySelector('.current')
 
-// Making the buttons work 
+
+// adding button functionality to the buttons
+
 let currentVal='';
-let prevVal='';
-let num1='';
-let num2='';
+let currentOp =''
+let previousVal ='';
 
-// Allows for button functionallity 
-numbers.forEach(function(numbers){
-    numbers.addEventListener('click', function(){
-        display.textContent += numbers.value;
-        currentVal = parseInt(display.innerText);
-    })
+//Current screen
+
+
+
+//Previous Screen
+
+
+//Operator Buttons
+
+
+operators.forEach(operator =>operator.addEventListener('click',function(e){
+       handleOperator(e.target.textContent)
+       previousScreen.textContent= previousVal + ' ' + currentOp;
+    currentScreen.textContent = currentVal;
+}))
+
+
+numbers.forEach((number)=> number.addEventListener('click', function(e){
+    handleNums(e.target.textContent)
+   currentScreen.textContent=currentVal;
+}))
+
+// allows for button display
+function handleNums(nums){
+    if(currentVal.length <=6){
+        currentVal+=nums
+    }
+  
+}
+
+// allows for operatror display
+
+ function handleOperator(operator){
+   //  if(currentOp<=1){
+        currentOp = operator
+        previousVal = currentVal
+        currentVal =''
+    
+}
+
+
+clear.addEventListener('click', function(e){
+      previousVal='';
+      currentVal='';
+      operator='';
+      previousScreen.textContent = currentVal;
+      currentScreen.textContent= currentVal;
+
+
 })
 
 
-
-operators.forEach(function(operators){
-
+equal.addEventListener('click', function(){
+    calculate()
+    previousScreen.textContent = '';
+    currentScreen.textContent=previousVal;
 })
+
+//operate function 
+
+
+
+
+function calculate(){
+    previousVal = Number(previousVal);
+    currentVal = Number(currentVal);
+    switch(currentOp){
+        case '+': 
+        previousVal+= currentVal; 
+        break;
+
+        case'-': 
+        previousVal-=currentVal;
+        break;
+        
+        case'*': 
+       previousVal*= currentVal;
+        break;
+
+        case'/': 
+        previousVal/= currentVal;
+        break;
+        
+        default:
+     
+    }
+    previousVal = Round(previousVal)
+    previousVal = previousVal.toString()
+    currentVal = currentVal.toString();
+
+
+}
+
+function Round(nums){
+   return Math.round(nums*1000)/1000
+}
