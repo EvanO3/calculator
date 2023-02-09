@@ -1,5 +1,6 @@
 const display1 = document.querySelector('.display-1');
 const display2 = document.querySelector('.display-2');
+const temp =document.querySelector('.tempResult')
 const buttons = document.querySelectorAll('.btn-num');
 const operators = document.querySelectorAll('.btn-op');
 const clear = document.querySelector('.btn-clear');
@@ -47,6 +48,7 @@ operators.forEach(operator =>{
             result =parseFloat(num2);
         }
         clearVar(operatorName)
+        LastOperation = operatorName;
     })
 })
 
@@ -55,31 +57,31 @@ function clearVar(name =''){
     display1.innerText=num1;
     display2.innerText='';
     num2='';
+    temp.innerText= result;
 }
-// functions 
+/**
+ * creates a function that carries out operations
+ */
 
-function add(num1, num2 ,result){
-    result = parseFloat(num1)+parseFloat(num2);
-    num1=result;
-}
-
-function sub(num1, num2 ,result){
-    result = parseFloat(num1)-parseFloat(num2);
-    num1=result;
-}
-
-function multiply(num1, num2 ,result){
-    result = parseFloat(num1)*parseFloat(num2);
-    num1=result;
-}
-
-function divide(num1, num2 ,result){
-    if(num2===0) return 'LMAOO'
-    result= parseFloat(num1)/parseFloat(num2);
-    num1=result;
-}
-
+function mathOperation(){
+    if(LastOperation ==='x'){
+        result = parseFloat(result)* parseFloat(num2);
+    }
+    else if(LastOperation ==='-'){
+        result = parseFloat(result)- parseFloat(num2);
+    }
+    else if(LastOperation ==='+'){
+        result = parseFloat(result)+parseFloat(num2);
+    }
+    else if(LastOperation ==='÷'){
+        result = parseFloat(result)/parseFloat(num2);
+    }
+    else if(LastOperation ==='%'){
+        result = parseFloat(result)%parseFloat(num2);
+    }
+    }
 
 
-
+/**
+ * Equals button function */ 
 
