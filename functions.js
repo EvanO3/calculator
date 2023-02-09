@@ -13,6 +13,10 @@ let result =null;
 let LastOperation = '';
 let hasdot =false;
 
+/**
+ * this adds action listeners to all buttons allowing for the correct number to
+ * display when click
+ */
 buttons.forEach(button =>{
     button.addEventListener('click',function(e){
         if(e.target.innerText ==='.'  && !hasdot){
@@ -25,8 +29,33 @@ buttons.forEach(button =>{
         display2.innerText=num2;
     }) 
 })
+/**
+ * this adds an action listener to all the operations and asures all operators
+ * are correctly appended to screen
+ * 
+ */
 
+operators.forEach(operator =>{
+    operator.addEventListener('click', function(e){
+        if(num2 === null) return;
+        hasdot = false;
+        const operatorName = e.target.innerText;
+        if(num1 && num2 &&LastOperation){
+            mathOperation()
+        }
+        else{
+            result =parseFloat(num2);
+        }
+        clearVar(operatorName)
+    })
+})
 
+function clearVar(name =''){
+    num1+=num2 +''+name +'';
+    display1.innerText=num1;
+    display2.innerText='';
+    num2='';
+}
 // functions 
 
 function add(num1, num2 ,result){
