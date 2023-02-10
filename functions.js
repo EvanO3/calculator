@@ -73,14 +73,17 @@ function mathOperation(){
     else if(LastOperation ==='+'){
         result = parseFloat(result)+parseFloat(num2);
     }
-    else if(LastOperation ==='÷'){
-        result = parseFloat(result)/parseFloat(num2);
-    }
+    
     else if(LastOperation ==='%'){
         result = parseFloat(result)%parseFloat(num2);
     }
+   else if (LastOperation ==='÷'){
+    result = parseFloat(result)%parseFloat(num2);
+     }
+    
     }
 
+  
 
 /**
  * Equals button function */ 
