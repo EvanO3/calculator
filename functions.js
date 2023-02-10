@@ -84,4 +84,16 @@ function mathOperation(){
 
 /**
  * Equals button function */ 
+clear.addEventListener('click', function(){
+      Clear();
+})
 
+function Clear(){
+     num1 ='';
+     num2='';
+     lastOperation =''; 
+     display1.innerText='';
+     display2.innerText = '';
+    temp.innerText='';
+
+}
