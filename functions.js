@@ -97,3 +97,20 @@ function Clear(){
     temp.innerText='';
 
 }
+
+/**
+ * checks if both values are empty when equals is pressed if not returns calculation,
+ *  if empty returns
+ */
+
+equals.addEventListener('click', function(e){
+    if(!num1 || !num2) return;
+    hasdot = false;
+   mathOperation()
+   clearVar()
+   display2.innerText = result;
+   temp.innerText = '';
+   num2=result;
+   num1='' ;
+
+})
