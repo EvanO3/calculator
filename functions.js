@@ -86,10 +86,13 @@ function mathOperation(){
   
 
 /**
- * Equals button function */ 
+ * adds clicking function to clear button */ 
 clear.addEventListener('click', function(){
       Clear();
 })
+/**
+ * creates a clear function to set everything to default
+ */
 
 function Clear(){
      num1 ='';
@@ -117,3 +120,8 @@ equals.addEventListener('click', function(e){
    num1='' ;
 
 })
+
+
+
+
+
